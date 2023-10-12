@@ -12,13 +12,13 @@ function Home() {
     const[name,setName]=useState("");
     const [currentPage, setCurrentPage] = useState(1);
     const perPage = 6; // Number of products per page
-    const totalPages = Math.ceil(data.students ?.length / perPage);
+    const totalPages = Math.ceil(data.cars?.length / perPage);
     const navigate=useNavigate();
     const handlePageChange = (selectedPage) => {
         setCurrentPage(selectedPage.selected + 1);
         navigate(`/page/${selectedPage.selected + 1}`);
     };
-    const currentProducts = data.students?.slice(
+    const currentProducts = data.cars?.slice(
         (currentPage - 1) * perPage,
         currentPage * perPage
     );
